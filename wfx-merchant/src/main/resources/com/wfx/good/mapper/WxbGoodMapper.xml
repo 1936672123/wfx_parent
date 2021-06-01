@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfx.good.mapper.WxbGoodMapper">
+
+    <resultMap id="findAllGoodMap" type="wxbGood">
+        <id property="goodId" column="gid"/>
+        <result property="goodName" column="gname"/>
+        <result property="createTime" column="gtime"/>
+        <result property="toped" column="gtoped"/>
+        <result property="recomed" column="grecomed"/>
+        <result property="state" column="gstate"/>
+        <result property="sPrice" column="sprice"/>
+        <result property="sPmoney" column="spmoney"/>
+
+    </resultMap>
+
+    <select id="findAllGood" resultMap="findAllGoodMap">
+       select g.good_id gid,g.good_name gname,g.create_time gtime,g.toped gtoped,g.recomed grecomed,g.state gstate,s.sku_price sprice,s.sku_pmoney spmoney
+       from wxb_good g
+       left join wxb_good_sku s
+       on g.good_id=s.good_id
+    </select>
+
+</mapper>
