@@ -8,11 +8,12 @@
     <artifactId>wfx-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
     <modules>
         <module>wfx-merchant</module>
         <module>wfx-media</module>
         <module>wfx-util</module>
-
     </modules>
 
     <properties>

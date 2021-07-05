@@ -11,6 +11,7 @@ import com.wfx.vo.PageResult;
 import com.wfx.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 /**
@@ -22,7 +23,7 @@ import org.springframework.util.StringUtils;
  * @since 2020-10-22
  */
 @Service
-
+@Transactional
 public class SkuViewServiceImpl extends ServiceImpl<SkuViewMapper, SkuView> implements ISkuViewService {
 
     @Autowired
